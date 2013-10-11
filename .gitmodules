@@ -1,0 +1,4 @@
+
+[submodule "Assets/Scripts/Meteor/JsonFx"]
+	path = Assets/Scripts/Meteor/JsonFx
+	url = git@github.com:hiddenswitch/jsonfx-1.x.git
