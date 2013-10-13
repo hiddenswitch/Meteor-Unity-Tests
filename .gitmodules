@@ -2,3 +2,6 @@
 [submodule "Assets/Scripts/Meteor/JsonFx"]
 	path = Assets/Scripts/Meteor/JsonFx
 	url = git@github.com:hiddenswitch/jsonfx-1.x.git
+[submodule "Assets/Scripts/UnTested"]
+	path = Assets/Scripts/UnTested
+	url = git@github.com:scopely/UnTested.git
