@@ -149,6 +149,12 @@ PlayerSettings:
     data:
       first: 1
       second: TESTS
+    data:
+      first: 4
+      second: TESTS
+    data:
+      first: 7
+      second: TESTS
   metroPackageName: MeteorSharps
   metroPackageLogo: 
   metroPackageVersion: 
