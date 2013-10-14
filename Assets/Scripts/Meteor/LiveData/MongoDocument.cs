@@ -1,22 +1,10 @@
 using System;
-using System.Collections;
+
 namespace Meteor
 {
-	public class MongoDocument : Hashtable
+	public class MongoDocument
 	{
-		[JsonFx.Json.JsonIgnore]
-		public string Id {
-			get {
-				return this ["_id"] as string;
-			}
-			set {
-				this ["_id"] = value;
-			}
-		}
-
-		public MongoDocument ()
-		{
-		}
+		public string _id;
 	}
 }
 

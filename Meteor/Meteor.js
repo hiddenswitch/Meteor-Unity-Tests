@@ -1,19 +1,21 @@
-if (Meteor.isClient) {
-  Template.hello.greeting = function () {
-    return "Welcome to Meteor.";
-  };
-
-  Template.hello.events({
-    'click input' : function () {
-      // template data, if any, is available in 'this'
-      if (typeof console !== 'undefined')
-        console.log("You pressed the button");
-    }
-  });
-}
+var TestCollection1 = new Meteor.Collection("testCollection1");
 
 if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
-  });
+    Meteor.publish("testCollection1", function () {
+        return TestCollection1.find({});
+    });
+
+
+
+    Meteor.methods({
+        startSubscribeAndGetRecordsTest: function() {
+            TestCollection1.remove({});
+            TestCollection1.insert({field1: "string 1", field2: {field3: 3, field4: new Date(1988, 3, 2)}});
+            TestCollection1.insert({field1: "string 2", field2: {field3: 30, field4: new Date(1989, 3, 2)}});
+        },
+
+        updateRecord: function () {
+            TestCollection1.update({field1: "string 1"}, {$set: {"field2.field3": 100}});
+        }
+    });
 }

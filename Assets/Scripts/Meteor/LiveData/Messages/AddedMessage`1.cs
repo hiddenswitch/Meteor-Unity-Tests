@@ -1,12 +1,12 @@
 using System;
 namespace Meteor
 {
-	public class AddedMessage : CollectionMessage
+	public class AddedMessage<TRecordType> : CollectionMessage
 	{
 		[JsonFx.Json.JsonIgnore]
 		public const string added = "added";
 		public string id = null;
-		public object fields = null;
+		public TRecordType fields;
 
 		public AddedMessage ()
 		{
