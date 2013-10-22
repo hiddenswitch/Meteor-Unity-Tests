@@ -15,7 +15,11 @@ if (Meteor.isServer) {
         },
 
         updateRecord: function () {
-            TestCollection1.update({field1: "string 1"}, {$set: {"field2.field3": 100}});
+            return TestCollection1.update({field1: "string 1"}, {$set: {"field2.field3": 100}});
+        },
+
+        noSideEffects: function() {
+            return "done";
         }
     });
 }
